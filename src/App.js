@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from "react";
+import Card from "./components/Card";
+import Wrapper from "./components/Wrapper";
+import Header from "./components/Header";
+import characters from './characters.json';
 import './App.css';
 
-function App() {
+
+export default class App extends Component {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Wrapper>
+      <h1 className="title">Characters List</h1>
+      {characters.map = ((character) => (
+        <CharacterCard
+          image={character.image}
+        />
+      ))}
+    </Wrapper>
+  )
 }
 
 export default App;
