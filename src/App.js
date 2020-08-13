@@ -13,6 +13,7 @@ class App extends Component {
     highscore: 0,
   };
 
+  //for when user choses the same character twice
   gameOver = () => {
     if (this.state.score > this.state.highscore) {
       this.setState({highscore: this.state.score}, function() {
@@ -26,6 +27,7 @@ class App extends Component {
     this.setState({score:0});
     return true;
   }
+
 
   clickCount = id => {
     this.state.characters.find((o, i) => {
@@ -45,6 +47,7 @@ class App extends Component {
     });
   }
 
+  // Rendered HTML and CSS
   render() {
     return (
       <Wrapper>
